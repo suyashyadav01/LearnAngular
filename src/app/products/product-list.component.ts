@@ -31,7 +31,7 @@ products: IProduct[] = [{
     "releaseDate": "March 18, 2021",
     "description": "15 gallon capacity rolling garden cart",
     "price": 32.99,
-    "starRating": 4.2,
+    "starRating": 3,
     "imageUrl": "assets/images/garden_cart.png"
   },
   {
@@ -52,5 +52,9 @@ toggleImage() : void{
 performFilter(value: string): IProduct[]{
     var filterBy = value.toLocaleLowerCase();
     return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(filterBy));
+}
+
+onRatingClick(message: string): void{
+    this.pageTitle = "Product List:" + message;
 }
 }
